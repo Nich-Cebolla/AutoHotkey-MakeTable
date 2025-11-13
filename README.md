@@ -340,7 +340,7 @@ used. For example, if your cells contain very long strings that would look bette
 multiple lines, you can set the `Options.MaxWidths` with an integer or array of integers. This will
 break up the text into multiple lines for cells that exceed the maximum. Then, when you call
 `MakeTable.Prototype.GetMarkdown`, you can set parameter `InnerLineSeparator` with a string to
-separate those lines. Use "&ltbr>" to separate the lines with line breaks.
+separate those lines. Use "&lt;br>" to separate the lines with line breaks.
 
 ## Returns
 
@@ -383,21 +383,21 @@ you can set the "MaxWidths" property of the options object that you pass to
 `MakeTable.Prototype.__New`. This will break up the text into multiple lines for cells
 that exceed the maximum. Then, when you call `MakeTable.Prototype.GetHtml`, you can
 set `Options.InnerLineSeparator` with a substring to separate those lines. A good option
-is "&ltbr>". An empty string is also an appropriate option.
+is "&lt;br>". An empty string is also an appropriate option.
 
 - **{String}** [ `` Options.LineSeparator = "`n" `` ] - The literal string that separates each line
 in the output string.
 
 - **{String}** [ `` Options.TableAttribute = "" `` ] - Any attributes you want included with the
-&lttable> element, e.g. "class=`"tbl-class`" border=`"1`"". Separate each individual attribute
+&lt;table> element, e.g. "class=`"tbl-class`" border=`"1`"". Separate each individual attribute
 with a space character.
 
 - **{String}** [ `` Options.TableStyle = "" `` ] - The style attribute value that will be
-included with the &lttable> elements. Only include the value that goes between the quotation
+included with the &lt;table> elements. Only include the value that goes between the quotation
 marks of the style attribute, e.g. "color:red;".
 
 - **{String|String[]|String[][]}** [ `` Options.TdAttribute = "" `` ] - If a string, the attribute
-that will be included with all &lttd> elements.
+that will be included with all &lt;td> elements.
   - If an array of strings, each index in the array corresponds to a row in the table (not
 including headers) and that string is applied as the attributes for each cell in the row.
 For example, index 1 is the first row after the headers.
@@ -421,7 +421,7 @@ items, an IndexError will occur.
     ```
 
 - **{String}** [ `` Options.TdStyle = "" `` ] - If a string, the style attribute value that will be
-included with all &lttd> elements. Only include the value that goes between the quotation marks
+included with all &lt;td> elements. Only include the value that goes between the quotation marks
 of the style attribute, e.g. "color:red;".
   - If an array of strings, each index in the array corresponds to a row in the table (not
 including headers) and that string is applied as the attributes for each cell in the row.
@@ -445,7 +445,7 @@ items, an IndexError will occur.
     ```
 
 - **{String|String[]}** [ `` Options.ThAttribute = "" `` ] - If a string, the attribute
-that will be included with all &ltth> elements.
+that will be included with all &lt;th> elements.
   - If an array of strings, each index in the array corresponds to an individual header.
   - The arrays must have the correct number of items for the table content. If there are too few
 items, an IndexError will occur.
@@ -457,7 +457,7 @@ items, an IndexError will occur.
     ```
 
 - **{String}** [ `` Options.ThStyle = "" `` ] - If a string, the style attribute value that will be
-included with all &ltth> elements. Only include the value that goes between the quotation marks
+included with all &lt;th> elements. Only include the value that goes between the quotation marks
 of the style attribute, e.g. "color:red;".
   - If an array of strings, each index in the array corresponds to a row in the table (not including
 headers).
@@ -470,7 +470,7 @@ items, an IndexError will occur.
     ```
 
 - **{String}** [ `` Options.TrAttribute = "" `` ] - If a string, the attribute
-that will be included with all &lttr> elements.
+that will be included with all &lt;tr> elements.
   - If an array of strings, each index in the array corresponds to a row in the table (not including
 headers).
   - The arrays must have the correct number of items for the table content. If there are too few
@@ -483,7 +483,7 @@ items, an IndexError will occur.
     ```
 
 - **{String}** [ `` Options.TrStyle = "" `` ] - If a string, the style attribute value that will be
-included with all &lttr> elements. Only include the value that goes between the quotation marks
+included with all &lt;tr> elements. Only include the value that goes between the quotation marks
 of the style attribute, e.g. "color:red;".
   - If an array of strings, each index in the array corresponds to a row in the table (not including
 headers).
