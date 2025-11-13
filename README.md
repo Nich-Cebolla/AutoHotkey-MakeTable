@@ -35,9 +35,11 @@ An AutoHotkey (AHK) class that takes your csv-style text and converts it to one 
 
 # AHK forum post
 
-
+https://www.autohotkey.com/boards/viewtopic.php?f=83&t=139518
 
 # Reddit post
+
+https://www.reddit.com/r/AutoHotkey/comments/1ovrn3t/maketable_a_class_that_converts_an_input_string/
 
 # Usage
 
