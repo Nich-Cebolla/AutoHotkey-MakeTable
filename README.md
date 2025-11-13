@@ -56,6 +56,39 @@ calldate,src,dst,dcontext,channel
 )"
 ```
 
+Basic usage:
+
+```ahk
+#include <MakeTable>
+str := "
+(
+calldate,src,dst,dcontext,channel
+07/14/2025 02:43:44,5555557485,17,play-system-recording,PJSIP/Cox_Trunk-0000d212
+07/14/2025 05:58:22,5555557984,s,ivr-6,PJSIP/Cox_Trunk-0000d213
+07/14/2025 06:36:41,5555559989,s,ivr-6,PJSIP/Cox_Trunk-0000d214
+07/14/2025 06:47:11,5555552202,91017,ext-queues,PJSIP/Cox_Trunk-0000d215
+)"
+options := {
+    AddHeaderSeparator: true
+  , InputColumnSeparator: ','
+  , LinePrefix: "|  "
+  , LineSuffix: "  |"
+  , OutputColumnSeparator: "|"
+}
+tbl := MakeTable(str, options)
+
+g := Gui()
+; We need a monospaced font for the pretty-aligned text to look pretty
+g.SetFont("s11 q5", "Cascadia Mono")
+g.Add("Edit", "w1200 r8 -Wrap", tbl.Value)
+g.Show()
+
+; write to file
+f := FileOpen(A_Temp "\MakeTable-output.md", "w")
+f.Write(tbl.Value)
+f.Close()
+```
+
 ## Clone the repo
 
 - Clone the repository.
@@ -95,16 +128,6 @@ Pass the options object to `MakeTable.Prototype.__New` to get a `MakeTable` obje
 
 The `MakeTable` object will have the pretty-aligned text set to property "Value". You also have
 two additional methods available, `MakeTable.Prototype.GetMarkdown` and `MakeTable.Prototype.GetHtml`.
-
-```ahk
-; Assume `inputStr` and `options` are appropriately defined.
-tbl := MakeTable(inputStr, options)
-g := Gui()
-; We need a monospaced font for the pretty-aligned text to look pretty
-g.SetFont("s11 q5", "Cascadia Mono")
-g.Add("Edit", "w600 r8", tbl.Value)
-g.Show()
-```
 
 If you use a very large input (e.g. 100k+ lines), `MakeTable` will finish the job but it might take
 a minute or two. Let it run and set a MsgBox to alert you when its finished.
