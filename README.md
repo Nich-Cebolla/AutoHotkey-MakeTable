@@ -211,7 +211,7 @@ integers which define the maximum allowable width per column. If the text in a c
 maximum, `MakeTable` breaks the text into multiple lines. If `Options.MaxWidths` is an integer,
 that value is applied as the max width of all columns.
 
-- **{String[]}** [ `Options.OutputColumnPrefix = ""` ] - Used to specify strings that prefixe
+- **{String[]}** [ `Options.OutputColumnPrefix = ""` ] - Used to specify strings that prefix
 columns. The difference between `Options.OutputColumnPrefix` and `Options.OutputColumnSeparator`
 is that `Options.OutputColumnSeparator` is applied to all columns, whereas
 `Options.OutputColumnPrefix` is used to prefix every line of a specific column with a specific
