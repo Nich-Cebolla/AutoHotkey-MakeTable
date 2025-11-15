@@ -268,7 +268,7 @@ class MakeTable extends Array {
         Str := RegExReplace(RegExReplace(Str, Options.InputColumnSeparator, inputColumnSeparator), Options.InputRowSeparator, Chr(n))
         lines := StrSplit(Str, Chr(n), tcr)
 
-        ; Prepare column linePrefix
+        ; Prepare column prefix
         columnPrefixSkipFirstLine := Options.OutputColumnPrefixSkipFirstRow
         if columnPrefix := Options.OutputColumnPrefix {
             columnPrefixLen := []
